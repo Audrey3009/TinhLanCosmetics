@@ -1,10 +1,10 @@
-# Kuzma Clothing & Shoes
+# Cosmetics Website
 
-Welcome to Kuzma Clothing & Shoes, the ultimate destination for fashion enthusiasts seeking a sophisticated online shopping experience. This is the project I have made completely alone with my current React.js skills. I created this project for my college exam and also because I wanted to test my current web development skills. Kuzma Clothing & Shoes is an innovative e-commerce platform offering a diverse range of clothing and footwear. With a catalog of over a hundred products, my online shop is designed to cater to the varied tastes and preferences of our customers. The website is equipped with user-friendly features to ensure a seamless shopping experience. This repository is home to a comprehensive React.js eCommerce project, showcasing a refined and responsive shopping platform 
+Welcome to Tinh Lan Cosmetics, the ultimate destination for fashion enthusiasts seeking a sophisticated online shopping experience. This is the project I have made completely alone with my current React.js skills. I created this project for my college exam and also because I wanted to test my current web development skills. Tinh Lan Cosmetics is an innovative e-commerce platform offering a diverse range of clothing and footwear. With a catalog of over a hundred products, my online shop is designed to cater to the varied tastes and preferences of our customers. The website is equipped with user-friendly features to ensure a seamless shopping experience. This repository is home to a comprehensive React.js eCommerce project, showcasing a refined and responsive shopping platform 
 tailored for the trendy and style-savvy.
 
 # Introduction
-Kuzma Clothing & Shoes is a fashion eCommerce website design that's built with the modern consumer in mind. Leveraging the power of React.js, I've created an engaging and intuitive platform that stands out in the digital marketplace. My project demonstrates how eCommerce and fashion can merge seamlessly in a digital ecosystem, providing an exceptional user experience from homepage to checkout.
+Tinh Lan Cosmetics is a cosmetics eCommerce website design that's built with the modern consumer in mind. Leveraging the power of React.js, I've created an engaging and intuitive platform that stands out in the digital marketplace. My project demonstrates how eCommerce and fashion can merge seamlessly in a digital ecosystem, providing an exceptional user experience from homepage to checkout.
 
 # Project Features
 - React Ecommerce Frontend: A modern and clean interface that highlights our product catalog with elegance and style.
@@ -22,8 +22,6 @@ Kuzma Clothing & Shoes is a fashion eCommerce website design that's built with t
 - React Ecommerce App: The structure of the application is designed to serve as a robust React eCommerce platform.
 - React Ecommerce Boilerplate: Developers can use this project as a boilerplate, enjoying a pre-configured environment that accelerates development cycles.
 
-# Here is the recorded step-by-step video instruction on how to run the app:
-[https://www.youtube.com/watch?v=4VGZhDXticc](https://youtu.be/hLlI7eMLw3M)
 
 # Instructions
 1. To run the app you first need to download and install Node.js and npm on your computer. When you download them you need to configure path variables. Here is the link where you can install them: https://nodejs.org/en
