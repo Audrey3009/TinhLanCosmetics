@@ -31,7 +31,7 @@ function Hero() {
         {images.map((image, index) => (
           <div
             key={index}
-            className="w-full shrink-0 "
+            className="w-full shrink-0 flex items-center justify-center"
           >
             <img src={image} alt={`Banner ${index + 1}`} className="w-[1200px] h-[520px] object-cover"  />
           </div>

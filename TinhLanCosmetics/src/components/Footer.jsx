@@ -64,31 +64,40 @@
 
 
 import React from "react";
+import { SiVisa, SiMastercard, SiApplepay, SiPaypal } from 'react-icons/si';
 
 const Footer = () => {
   return (
     <div className="Footer" style={{marginTop: '30px'}}>
       <div className="bg-[#FAE3D9] p-6 rounded-lg shadow-md"> 
-      <div className="grid grid-cols-2 gap-4">
+      <div className="grid grid-cols-4 gap-4">
         <div>
           <h2 className="text-xl font-semibold text-gray-800">TINH LAN COSMETIC</h2>
           <p className="text-gray-600">Địa chỉ:</p>
           <p className="text-gray-600">Số điện thoại: 0123456789</p>
-          <p className="text-gray-600">Email: ...@gmail.com</p>
-          <div className="flex items-center mt-2">
-            <img src="/visa-logo.png" alt="Visa Logo" className="h-6 mr-2" /> 
-            <img src="/mastercard-logo.png" alt="Mastercard Logo" className="h-6 mr-2" /> 
-            {/* Thêm các logo thanh toán khác tại đây */}
-          </div>
+            <p className="text-gray-600">Email: ...@gmail.com</p>
+            <p className="text-xl font-semibold text-gray-800 mt-2">CHẤP NHẬN THANH TOÁN</p>
+            <div className="flex items-center mt-2">
+              <SiVisa className="h-8 w-8 mr-2 text-600" style={{ color: '#254AA5' }} />
+              <SiMastercard className="h-8 w-8 mr-2 text-orange-500" />
+              <SiApplepay className="h-8 w-8 mr-2 text-gray-800" />
+              <SiPaypal className="h-8 w-8 mr-2 text-blue-800" />
+            </div>
+            <img src="../public/đã thông báo.png" alt="Đã Thông Báo Logo" className="h-14" /> 
         </div>
         <div>
           <h2 className="text-xl font-semibold text-gray-800">HỖ TRỢ KHÁCH HÀNG</h2>
           {/* Thêm thông tin hỗ trợ khách hàng tại đây */}
         </div>
-        {/* Thêm cột "GIỜ MỞ CỬA" và "THÔNG TIN" nếu cần */}
-      </div>
-      <div className="mt-4">
-        <img src="/da-thong-bao-logo.png" alt="Đã Thông Báo Logo" className="h-12" /> 
+        <div>
+            <h2 className="text-xl font-semibold text-gray-800">GIỜ MỞ CỬA</h2>
+            {/* Thêm thông tin hỗ trợ khách hàng tại đây */}
+          </div>
+        <div>
+          <h2 className="text-xl font-semibold text-gray-800">THÔNG TIN</h2>
+          {/* Thêm thông tin hỗ trợ khách hàng tại đây */}
+        </div>  
+          
       </div>
     </div>
     </div>

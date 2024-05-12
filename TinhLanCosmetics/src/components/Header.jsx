@@ -73,7 +73,7 @@ const Header = () => {
           </li>
         </ul>
       </div>
-      <div className="navbar">
+      <div className="navbar ">
         <div className="flex-1">
           <Link
             to="/"
@@ -185,7 +185,7 @@ const Header = () => {
         </div>
       </div>
 
-      <div className="navbar-bottom-menu border-y border-gray-800">
+      <div className="navbar-bottom-menu border-y border-gray-800 ">
         <div className="drawer">
           <input id="my-drawer" type="checkbox" className="drawer-toggle" />
           <div className="drawer-content">
