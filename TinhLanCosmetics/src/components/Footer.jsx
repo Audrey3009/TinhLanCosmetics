@@ -67,7 +67,8 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <div className="bg-pink-100 p-6 rounded-lg shadow-md"> 
+    <div className="Footer" style={{marginTop: '30px'}}>
+      <div className="bg-[#FAE3D9] p-6 rounded-lg shadow-md"> 
       <div className="grid grid-cols-2 gap-4">
         <div>
           <h2 className="text-xl font-semibold text-gray-800">TINH LAN COSMETIC</h2>
@@ -90,6 +91,9 @@ const Footer = () => {
         <img src="/da-thong-bao-logo.png" alt="Đã Thông Báo Logo" className="h-12" /> 
       </div>
     </div>
+    </div>
+
+    
   );
 };
 
