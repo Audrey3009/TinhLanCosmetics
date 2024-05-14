@@ -74,9 +74,8 @@ const Footer = () => {
         <div>
           <h2 className="text-xl font-semibold text-gray-800">TINH LAN COSMETIC</h2>
           <p className="text-gray-600">Địa chỉ:</p>
-          <p className="text-gray-600">Số điện thoại: 0123456789</p>
             <p className="text-gray-600">Email: ...@gmail.com</p>
-            <p className="text-xl font-semibold text-gray-800 mt-2">CHẤP NHẬN THANH TOÁN</p>
+            <p className="text-xl font-semibold text-gray-800 mt-2">THANH TOÁN</p>
             <div className="flex items-center mt-2">
               <SiVisa className="h-8 w-8 mr-2 text-600" style={{ color: '#254AA5' }} />
               <SiMastercard className="h-8 w-8 mr-2 text-orange-500" />
@@ -87,7 +86,7 @@ const Footer = () => {
         </div>
         <div>
           <h2 className="text-xl font-semibold text-gray-800">HỖ TRỢ KHÁCH HÀNG</h2>
-          {/* Thêm thông tin hỗ trợ khách hàng tại đây */}
+          <p className="text-gray-600">Hotline:</p>
         </div>
         <div>
             <h2 className="text-xl font-semibold text-gray-800">GIỜ MỞ CỬA</h2>

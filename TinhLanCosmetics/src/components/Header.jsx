@@ -23,7 +23,11 @@ const Header = () => {
 
 
   const loginState = useSelector((state) => state.auth.isLoggedIn);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
+  const toggleDropdown = () => {
+    setIsDropdownOpen(!isDropdownOpen);
+  };
 
   const fetchWishlist = async () => {
     if(loginState){
@@ -190,7 +194,7 @@ const Header = () => {
           <input id="my-drawer" type="checkbox" className="drawer-toggle" />
           <div className="drawer-content">
   
-            {/* Page content here */}
+            Page content here
             <label htmlFor="my-drawer" className="btn drawer-button">
               <HiMiniBars3BottomLeft className="text-4xl" />
             </label>
@@ -206,7 +210,7 @@ const Header = () => {
             <label htmlFor="my-drawer" className="btn drawer-button">
             <FaWindowClose className="text-3xl ml-auto" />
             </label>
-              {/* Sidebar content here */}
+              Sidebar content here
               <li className="text-xl">
                 <NavLink className="text-accent-content" to="/">
                   Home
@@ -247,7 +251,7 @@ const Header = () => {
           </NavLink>
           
         </div>
-      </div>
+      </div>  
     </>
   );
 };
