@@ -6,6 +6,7 @@ import { FaHeart } from "react-icons/fa6";
 
 
 import { FaWindowClose } from "react-icons/fa";
+import { FaBars } from "react-icons/fa";
 
 import "../styles/Header.css";
 import { useDispatch, useSelector } from "react-redux";
@@ -22,12 +23,26 @@ const Header = () => {
   const dispatch = useDispatch();
 
 
+
+
   const loginState = useSelector((state) => state.auth.isLoggedIn);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
   };
+
+  // Hover tạo danh mục sản phẩm
+  // const [isHovering, setIsHovering] = useState(false);
+
+  // const handleMouseOver = () => {
+  //   setIsHovering(true);
+  // };
+
+  // const handleMouseOut = () => {
+  //   setIsHovering(false);
+  // };
+  // 
 
   const fetchWishlist = async () => {
     if(loginState){
@@ -194,7 +209,6 @@ const Header = () => {
           <input id="my-drawer" type="checkbox" className="drawer-toggle" />
           <div className="drawer-content">
   
-            Page content here
             <label htmlFor="my-drawer" className="btn drawer-button">
               <HiMiniBars3BottomLeft className="text-4xl" />
             </label>
@@ -208,9 +222,10 @@ const Header = () => {
                     
             <ul className="menu p-4 w-80 min-h-full bg-base-200 text-base-content mt-4">
             <label htmlFor="my-drawer" className="btn drawer-button">
-            <FaWindowClose className="text-3xl ml-auto" />
+                <FaWindowClose className="text-3xl ml-auto" />
+                
             </label>
-              Sidebar content here
+              
               <li className="text-xl">
                 <NavLink className="text-accent-content" to="/">
                   Home
@@ -231,12 +246,40 @@ const Header = () => {
                   Contact
                 </NavLink>
               </li>
+
+              <li className="text-xl">
+                <NavLink className="text-accent-content menu-item" to="/products">
+                  <FaBars />
+                  Danh mục
+              {/* <ul className="menu p-2">
+              <li><NavLink to="/category1">Category 1</NavLink></li>
+              <li><NavLink to="/category2">Category 2</NavLink></li>
+              <li><NavLink to="/category3">Category 3</NavLink></li>
+            </ul> */}
+          </NavLink>
+        </li>
               
             </ul>
           </div>
         </div>
 
-        <div className="container text-2xl navlinks-container">
+        <div className="container text-xl navlinks-container">
+          {/* <NavLink className="menu-item text-accent-content flex items-center"
+                 to="#"
+                 onMouseOver={handleMouseOver}
+                 onMouseOut={handleMouseOut}>
+          <FaBars className="icon mr-2" />
+          Danh mục sản phẩm
+        </NavLink> */}
+          <NavLink className="text-accent-content menu-item flex items-center" to="/shop">
+            <FaBars className="icon mr-2" />
+            Danh mục
+            <ul className="menu p-2">
+              <li><NavLink to="/category1">Category 1</NavLink></li>
+              <li><NavLink to="/category2">Category 2</NavLink></li>
+              <li><NavLink to="/category3">Category 3</NavLink></li>
+            </ul>
+            </NavLink>
           <NavLink className="text-accent-content" to="/">
             Home
           </NavLink>
