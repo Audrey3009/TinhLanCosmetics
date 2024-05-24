@@ -20,7 +20,7 @@ const Cart = () => {
 
   return (
     <>
-    <SectionTitle title="Cart" path="Home | Cart" />
+    <SectionTitle title="Giỏ hàng" />
     <div className='mt-8 grid gap-8 lg:grid-cols-12 max-w-7xl mx-auto px-10'>
         <div className='lg:col-span-8'>
           <CartItemsList />
