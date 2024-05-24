@@ -117,7 +117,7 @@ const SingleProduct = () => {
 
   return (
     <>
-      <SectionTitle title="Product page" path="Home | Shop | Product page" />
+      <SectionTitle title="Product page" />
       <div className="grid grid-cols-2 max-w-7xl mx-auto mt-5 max-lg:grid-cols-1 max-lg:mx-5">
         <div className="product-images flex flex-col justify-center max-lg:justify-start">
           <img
