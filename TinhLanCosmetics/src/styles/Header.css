@@ -34,14 +34,14 @@
 
 
 .navbar-bottom-menu .navlinks-container ul li {
-    padding: 10px;
+    padding: 2px;
     white-space: nowrap;
 }
 
 .topbar ul {
     display: flex;
     justify-content: flex-end;
-    column-gap: 30px;
+    column-gap: 10px;
     padding-right: 50px;
 }
 
@@ -58,7 +58,7 @@
 }
 
 .topbar button {
-    background-color: #FFB6B9;
+    background-color: #BBDED6;
     padding: 5px;
     font-size: 14px;
     border-radius: 5px;

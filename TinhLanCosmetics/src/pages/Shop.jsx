@@ -10,6 +10,7 @@ import "../styles/Shop.css";
 import axios from "axios";
 import { useLoaderData, useNavigate, useSearchParams } from "react-router-dom";
 import { nanoid } from "nanoid";
+import NavBar from "../components/NavBar";
 
 export const shopLoader = async ({ request }) => {
   const params = Object.fromEntries([
@@ -79,9 +80,14 @@ const Shop = () => {
 
   return (
     <>
-      <SectionTitle title="Shop"/>
-      <div className="max-w-7xl mx-auto mt-5">
-        <Filters />
+      <SectionTitle title="Sản phẩm" />
+      <div className="shop-container max-w-7xl mx-auto mt-5">
+        <div className="shop-navbar">
+          <NavBar />
+        </div>
+
+        <div className="shop-content">
+          <Filters />
         {productLoaderData.productsData.length === 0 && <h2 className="text-accent-content text-center text-4xl my-10">No products found for this filter</h2>}
         <div className="grid grid-cols-4 px-2 gap-y-4 max-lg:grid-cols-3 max-md:grid-cols-2 max-sm:grid-cols-1 shop-products-grid">
           {productLoaderData.productsData.length !== 0 &&
@@ -97,6 +103,8 @@ const Shop = () => {
               />
             ))}
         </div>
+        </div>
+        
       </div>
 
       <Pagination />

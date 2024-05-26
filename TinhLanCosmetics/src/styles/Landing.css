@@ -31,3 +31,17 @@
         margin: 0 auto;
     }
 }
+
+.sub-section-buttons button {
+    margin-right: 10px;
+    background-color: #28a745;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.sub-section-buttons button:hover {
+    background-color: #218838;
+}

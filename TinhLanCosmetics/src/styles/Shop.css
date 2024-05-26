@@ -1,3 +1,27 @@
 .shop-products-grid div div{
     margin: 0 auto;
 }
+
+/* styles/Shop.css */
+.shop-container {
+    display: flex;
+}
+
+.shop-navbar {
+    flex: 0 0 250px;
+    /* Đặt kích thước cố định cho NavBar */
+}
+
+.shop-content {
+    flex: 1;
+    padding-left: 1rem;
+}
+
+.shop-products-grid {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    /* Đặt kích thước tối thiểu của phần tử sản phẩm */
+}
+
+.shop-products-grid div div {
+    margin: 0;
+}

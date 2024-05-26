@@ -41,7 +41,7 @@ const Header = () => {
 
   return (
     <>
-      <div className="topbar border-b border-gray-800">
+      <div className="topbar border-0 border-gray-800">
         <ul>
           {!isLoggedIn && (
             <>
