@@ -40,7 +40,7 @@ const Search = () => {
       <SectionTitle title="Tìm kiếm" className="text-xl !important" />
 
       <form
-        className="form-control max-w-7xl mx-auto py-10 px-10"
+        className="form-control max-w-6xl mx-auto py-5 px-10"
         onSubmit={handleSearch}
       >
         <div className="input-group">
