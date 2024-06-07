@@ -114,7 +114,7 @@ const Filters = () => {
         price={2000}
       />
       {/* Date Picker */}
-      <FormDatePicker label="select minimum production date" name="date" />
+      {/* <FormDatePicker label="select minimum production date" name="date" /> */}
 
       {/* In stock */}
       <FormCheckbox

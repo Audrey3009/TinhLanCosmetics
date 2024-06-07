@@ -49,8 +49,7 @@ export const shopLoader = async ({ request }) => {
     ((filterObj.search != '') ? `&q=${encodeURIComponent(filterObj.search)}` : ``) +
     (filterObj.order ? `&_sort=price.current.value` : "") + // Check if the order exists, then sort it in ascending order. After that, the API response will be modified if descending order or any other filter is selected.
     (filterObj.in_stock ? (`&isInStock`) : '') +
-    (filterObj.price !== 'all' ? `&price.current.value_lte=${filterObj.price}` : ``) +
-    (filterObj.date ? `&productionDate=${filterObj.date}` : ``) // It only matched exact for the date and time. 
+    (filterObj.price !== 'all' ? `&price.current.value_lte=${filterObj.price}` : ``) // It only matched exact for the date and time. 
 
   try {
     const response = await axios(
@@ -99,7 +98,7 @@ const Shop = () => {
                 image={product.imageUrl}
                 rating={product.rating}
                 price={product.price.current.value}
-                brandName={product.brandName}
+                originalPrice={product.originalPrice?.current?.value}
               />
             ))}
         </div>

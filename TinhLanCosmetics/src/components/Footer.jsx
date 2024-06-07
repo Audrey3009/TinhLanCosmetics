@@ -82,7 +82,7 @@ const Footer = () => {
               <SiApplepay className="h-8 w-8 mr-2 text-gray-800" />
               <SiPaypal className="h-8 w-8 mr-2 text-blue-800" />
             </div>
-            <img src="../public/đã thông báo.png" alt="Đã Thông Báo Logo" className="h-14" /> 
+            <img src="../public/kiemchung.png" alt="Đã Thông Báo Logo" className="h-14" /> 
         </div>
         <div>
           <h2 className="text-xl font-semibold text-gray-800">HỖ TRỢ KHÁCH HÀNG</h2>
@@ -90,7 +90,7 @@ const Footer = () => {
         </div>
         <div>
             <h2 className="text-xl font-semibold text-gray-800">GIỜ MỞ CỬA</h2>
-            {/* Thêm thông tin hỗ trợ khách hàng tại đây */}
+            <p className="text-gray-600">Từ 9:00 - 21:30 tất cả các ngày trong tuần (bao gồm cả các ngày lễ, ngày Tết).</p>
           </div>
         <div>
           <h2 className="text-xl font-semibold text-gray-800">THÔNG TIN</h2>

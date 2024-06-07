@@ -8,9 +8,7 @@ const SelectSize = ({ sizeList, size, setSize }) => {
         const newSize = event.target.value;
         setSize(newSize);
       }}>
-        <option disabled className="text-lg">
-          Pick your size
-        </option>
+        
         {sizeList.map((item, index) => (
           <option value={item} key={index} className="text-xl">
             {item}

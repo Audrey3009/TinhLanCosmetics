@@ -3,19 +3,14 @@ import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { addToCart } from "../features/cart/cartSlice";
 import { FaStar, FaStarHalfAlt, FaRegStar } from "react-icons/fa";
-// import { toast } from "react-toastify";
 
-const ProductElement = ({ id, title, image, rating, price, brandName }) => {
+const ProductElement = ({ id, title, image, rating, price, originalPrice, brandName }) => {
 
-  // const dispatch = useDispatch();
 
   const product = {
-    id, title, image, rating, price, brandName, amount: 1
+    id, title, image, rating, price, originalPrice, brandName, amount: 1
   };
 
-  // const handleAddToCart = () => {
-  //   dispatch(addToCart(product)); // Dispatch addToCart action
-  // };
 
   const renderStars = (rating) => {
     const fullStars = Math.floor(rating);
@@ -52,25 +47,14 @@ const ProductElement = ({ id, title, image, rating, price, brandName }) => {
             </h3>
           </Link>
           <div className="flex flex-col items-start mt-auto">
-            <span className="text-base font-bold text-accent-content m-0" style={{ color: "#d62828" }}>${price}</span>
-            <span span className="text-sm text-gray-500 line-through mt-1 m-0">$100</span>
-
-            {/* <div className="text-left mt-2 flex items-center m-0">
-              {renderStars(rating)}
-              <span className="text-sm text-gray-500 ml-2">{rating.toFixed(1)}</span>
-            </div> */}
+            <span className="text-base font-bold text-accent-content m-0" style={{ color: "#d62828" }}>{price}đ</span>
+            <span className="text-sm text-gray-500 line-through mt-1 m-0">{originalPrice}đ</span>
 
             <div className="flex items-center justify-between w-full mt-2">
               <div className="flex items-center">
                 {renderStars(rating)}
                 <span className="text-sm text-gray-500 ml-2">{rating.toFixed(1)}</span>
               </div>
-              {/* <button
-                className="btn bg-blue-600 hover:bg-blue-500 text-white p-2 rounded-full"
-                onClick={handleAddToCart}
-              >
-                <FaCartShopping className="text-xl" />
-              </button> */}
             </div>
             
           </div>

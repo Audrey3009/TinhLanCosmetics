@@ -45,3 +45,8 @@
 .sub-section-buttons button:hover {
     background-color: #218838;
 }
+
+.sub-section-buttons button:focus,
+.sub-section-buttons button:active {
+    background-color: #1e7e34; /* Màu đậm hơn khi button đang hoạt động */
+}
