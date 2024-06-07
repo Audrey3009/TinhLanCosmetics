@@ -21,6 +21,7 @@ import {
 } from "../features/wishlist/wishlistSlice";
 import { toast } from "react-toastify";
 import { store } from "../store";
+import { FaChevronUp, FaChevronDown } from "react-icons/fa";
 
 export const singleProductLoader = async ({ params }) => {
   const { id } = params;
@@ -32,6 +33,7 @@ export const singleProductLoader = async ({ params }) => {
 
 const SingleProduct = () => {
   const [currentImage, setCurrentImage] = useState(0);
+  const [currentStartIndex, setCurrentStartIndex] = useState(0);
   const [quantity, setQuantity] = useState(1);
   const [size, setSize] = useState(0);
   const { wishItems } = useSelector((state) => state.wishlist);
@@ -115,45 +117,73 @@ const SingleProduct = () => {
     toast.success("Product removed from the wishlist!");
   };
 
+  const handlePrev = () => {
+    setCurrentStartIndex((prevIndex) =>
+      prevIndex > 0 ? prevIndex - 1 : productData.additionalImageUrls.length - 2
+    );
+  };
+
+  const handleNext = () => {
+    setCurrentStartIndex((prevIndex) =>
+      prevIndex < productData.additionalImageUrls.length - 2 ? prevIndex + 1 : 0
+    );
+  };
+
   return (
     <>
-      <SectionTitle title="Product page" />
+      
       <div className="grid grid-cols-2 max-w-7xl mx-auto mt-5 max-lg:grid-cols-1 max-lg:mx-5">
-        <div className="product-images flex flex-col justify-center max-lg:justify-start">
+        <div className="product-images grid grid-cols-2 justify-center max-lg:justify-start">
           <img
             src={`https://${productData?.additionalImageUrls[currentImage]}`}
             className="w-96 text-center border border-gray-600 cursor-pointer"
             alt={productData.name}
           />
-          <div className="other-product-images mt-1 grid grid-cols-3 w-96 gap-y-1 gap-x-2 max-sm:grid-cols-2 max-sm:w-64">
-            {productData?.additionalImageUrls.map((imageObj, index) => (
+          <div className="flex flex-col items-center ml-3 h-full">
+            <button onClick={handlePrev} className="mb-2">
+              <FaChevronUp className="text-2xl text-gray-600 cursor-pointer hover:text-gray-800" />
+            </button>
+
+            <div className="other-product-images grid grid-cols-1 gap-y-1 gap-x-2 max-sm:grid-cols-2 max-sm:w-64" style={{ marginLeft: '10px' }}>
+              {productData?.additionalImageUrls.slice(currentStartIndex, currentStartIndex + 2).map((imageObj, index) => (
               <img
                 src={`https://${imageObj}`}
                 key={nanoid()}
-                onClick={() => setCurrentImage(index)}
+                onClick={() => setCurrentImage(currentStartIndex + index)}
                 alt={productData.name}
                 className="w-32 border border-gray-600 cursor-pointer"
               />
-            ))}
-          </div>
+              ))}
+            </div>
+        <button onClick={handleNext} className="mt-2">
+          <FaChevronDown className="text-2xl text-gray-600 cursor-pointer hover:text-gray-800" />
+        </button>
+      </div>
         </div>
         <div className="single-product-content flex flex-col gap-y-5 max-lg:mt-2">
-          <h2 className="text-5xl max-sm:text-3xl text-accent-content">
+          <h2 className="text-4xl max-sm:text-2xl text-accent-content">
             {productData?.name}
           </h2>
           <SingleProductRating rating={rating} productData={productData} />
-          <p className="text-3xl text-error">
-            ${productData?.price?.current?.value}
-          </p>
+          <div>
+            <p className="text-2xl text-error">{productData?.price?.current?.value}đ</p>
+            {productData?.originalPrice && (
+              <p className="text-sm line-through text-gray-500">{productData?.originalPrice?.current?.value}đ</p>
+            )}
+          </div>
+
+
           <div className="text-xl max-sm:text-lg text-accent-content">
             {parse(productData?.description)}
           </div>
-          <div className="text-2xl">
-            <SelectSize
-              sizeList={productData?.availableSizes}
-              size={size}
-              setSize={setSize}
-            />
+          <div className="text-xl">
+            {productData && productData.availableSizes && productData.availableSizes.length > 0 && (
+              <SelectSize
+                sizeList={productData.availableSizes}
+                size={size}
+                setSize={setSize}
+              />
+            )}
           </div>
           <div>
             <label htmlFor="Quantity" className="sr-only">
@@ -167,7 +197,7 @@ const SingleProduct = () => {
           </div>
           <div className="flex flex-row gap-x-2 max-sm:flex-col max-sm:gap-x">
             <button
-              className="btn bg-blue-600 hover:bg-blue-500 text-white"
+              className="btn bg-[#BBDED6] hover:bg-[#7fead1] text-black"
               onClick={() => {
                 if (loginState) {
                   dispatch(addToCart(product));
@@ -178,13 +208,13 @@ const SingleProduct = () => {
                 }
               }}
             >
-              <FaCartShopping className="text-xl mr-1" />
+              <FaCartShopping className="text-base mr-1" />
               Add to cart
             </button>
 
             {product?.isInWishList ? (
               <button
-                className="btn bg-blue-600 hover:bg-blue-500 text-white"
+                className="btn bg-[#BBDED6] hover:bg-[#7fead1] text-black"
                 onClick={() => {
                   if (loginState) {
                     removeFromWishlistHandler(product);
@@ -195,12 +225,12 @@ const SingleProduct = () => {
                   }
                 }}
               >
-                <FaHeart className="text-xl mr-1" />
+                <FaHeart className="text-base mr-1" />
                 Remove from wishlist
               </button>
             ) : (
               <button
-                className="btn bg-blue-600 hover:bg-blue-500 text-white"
+                className="btn bg-[#BBDED6] hover:bg-[#7fead1] text-black"
                 onClick={() => {
                   if (loginState) {
                     addToWishlistHandler(product);
@@ -211,7 +241,7 @@ const SingleProduct = () => {
                   }
                 }}
               >
-                <FaHeart className="text-xl mr-1" />
+                <FaHeart className="text-base mr-1" />
                 Add to wishlist
               </button>
             )}
@@ -220,9 +250,7 @@ const SingleProduct = () => {
             <div className="badge bg-gray-700 badge-lg font-bold text-white p-5 mt-2">
               Brand: {productData?.brandName}
             </div>
-            <div className="badge bg-gray-700 badge-lg font-bold text-white p-5 mt-2">
-              Gender: {productData?.gender}
-            </div>
+            
             <div
               className={
                 productData?.isInStock
@@ -238,10 +266,7 @@ const SingleProduct = () => {
             <div className="badge bg-gray-700 badge-lg font-bold text-white p-5 mt-2">
               Category: {productData?.category}
             </div>
-            <div className="badge bg-gray-700 badge-lg font-bold text-white p-5 mt-2">
-              Production Date:{" "}
-              {productData?.productionDate?.substring(0, 10)}
-            </div>
+            
           </div>
         </div>
       </div>

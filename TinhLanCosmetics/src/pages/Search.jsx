@@ -83,7 +83,7 @@ const Search = () => {
               image={product.imageUrl}
               rating={product.rating}
               price={product.price.current.value}
-              brandName={product.brandName}
+              originalPrice={product.originalPrice?.current?.value}
             />
           ))}
 

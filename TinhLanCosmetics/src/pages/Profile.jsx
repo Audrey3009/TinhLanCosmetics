@@ -6,7 +6,7 @@ import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 
 const Profile = () => {
-  const [id, setId] = useState(localStorage.getItem("id"));
+  const [id, setId] = useState(localStorage.getItem("id") || '');
   const [userData, setUserData] = useState({});
   const loginState = useSelector((state) => state.auth.isLoggedIn);
   const wishItems = useSelector((state) => state.wishlist.wishItems);
