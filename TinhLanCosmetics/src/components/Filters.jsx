@@ -99,13 +99,13 @@ const Filters = () => {
         defaultValue="a-z"
       />
       {/* Producer */}
-      <FormSelect
+      {/* <FormSelect
         label="Select gender"
         name="gender"
         list={["all", "male", "female"]}
         size="select-sm"
         defaultValue="all"
-      />
+      /> */}
       {/* PRICE */}
       <FormRange
         name="price"
@@ -124,16 +124,17 @@ const Filters = () => {
       />
 
       {/* BUTTONS */}
-
-      <button
-        type="submit"
-        className="btn bg-blue-600 hover:bg-blue-500 text-white btn-sm"
-      >
-        search
-      </button>
-      <Link to="/shop?page=1" className="btn btn-primary btn-sm">
-        reset
-      </Link>
+      <div className="col-span-full flex justify-end space-x-2">
+        <button
+          type="submit"
+          className="btn bg-[#BBDED6] hover:bg-[#A6D1CC] text-black btn-sm"
+        >
+          search
+        </button>
+        <Link to="/shop?page=1" className="btn btn-primary btn-sm">
+          reset
+        </Link>
+      </div>
     </Form>
   );
 };

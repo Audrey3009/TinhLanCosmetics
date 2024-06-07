@@ -5,7 +5,7 @@ import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 
 function Hero() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  const images = ['../public/main banner 3.jpg', '../public/main banner 3.jpg', '../public/main banner 3.jpg']; // Thay thế bằng đường dẫn ảnh của bạn
+  const images = ['../public/main_banner1.jpg', '../public/main_banner2.jpg', '../public/main_banner3.jpg']; // Thay thế bằng đường dẫn ảnh của bạn
   const timeoutRef = useRef(null);
 
   const nextImage = () => {

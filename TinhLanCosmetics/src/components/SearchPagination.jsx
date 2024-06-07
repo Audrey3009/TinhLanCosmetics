@@ -17,7 +17,7 @@ const SearchPagination = ({
       <div className="pagination flex justify-center mt-10">
         <div className="join">
           <button
-            className="join-item btn text-4xl flex justify-center"
+            className="join-item btn text-2xl flex justify-center"
             onClick={() => {
               if (currentPage === 1) {
                 return;
@@ -27,9 +27,9 @@ const SearchPagination = ({
           >
             <FaCircleArrowLeft />
           </button>
-          <button className="join-item btn text-2xl">Page {currentPage}</button>
+          <button className="join-item btn text-base">Page {currentPage}</button>
           <button
-            className="join-item btn text-4xl flex justify-center"
+            className="join-item btn text-2xl flex justify-center"
             onClick={() => {
               if (products.length < 10) {
                 return;
