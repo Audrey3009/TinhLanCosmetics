@@ -30,6 +30,12 @@ const Landing = () => {
     setSelectedProducts(trendingProducts);
   };
 
+  const showNewProducts = () => {
+    // Lọc ra 8 sản phẩm mới nhất từ products
+    const newProducts = products.slice(8, 16);
+    setSelectedProducts(newProducts);
+  };
+
   useEffect(() => {
     // Mặc định hiển thị sản phẩm được mua phổ biến khi component được tạo
     showPopularProducts();
@@ -72,25 +78,13 @@ const Landing = () => {
         </div>
       </div>
 
-      <div className="selected-products">
+      <div className="new-products mt-16">
         <h2 className="text-4xl text-center my-12 max-md:text-4xl text-accent-content bg-[#BBDED6] py-2.5">
           Sản phẩm mới
         </h2>
 
-        
-
-        <div className="sub-section-buttons flex justify-center mb-8">
-          <button className="bg-green-500 text-white py-3 px-6 mr-4 rounded" onClick={showPopularProducts}>
-            Sản phẩm được mua phổ biến
-          </button>
-          <button className="bg-green-500 text-white py-3 px-6 rounded" onClick={showTrendingProducts}>
-            Sản phẩm được xem nhiều
-          </button>
-        </div>
-      
-
-        <div className="selected-products-grid max-w-7xl mx-auto">
-          {selectedProducts.map((product) => (
+        <div className="new-products-grid max-w-7xl mx-auto">
+          {products.map((product) => (
             <ProductElement
               key={product.id}
               id={product.id}

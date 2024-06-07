@@ -19,7 +19,7 @@ const Pagination = () => {
     <div className="pagination flex justify-center mt-10">
       <div className="join">
         <button
-          className="join-item btn text-4xl flex justify-center"
+          className="join-item btn text-xl flex justify-center"
           onClick={() => {
             
             if(productsLoaderData.page === 1){
@@ -32,9 +32,9 @@ const Pagination = () => {
         >
           <FaCircleArrowLeft />
         </button>
-        <button className="join-item btn text-2xl">Page {productsLoaderData.page}</button>
+        <button className="join-item btn text-base">Page {productsLoaderData.page}</button>
         <button
-          className="join-item btn text-4xl flex justify-center"
+          className="join-item btn text-xl flex justify-center"
           onClick={() => {
 
             if(productsLoaderData.productsLength < 10){

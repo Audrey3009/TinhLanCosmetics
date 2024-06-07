@@ -42,7 +42,7 @@ export const shopLoader = async ({ request }) => {
   };
 
   // set params in get apis
-  let parameter = (`?_start=${(filterObj.current_page - 1) * 10}&_limit=10`) + // pre defined that limit of response is 10 & page number count 1
+  let parameter = (`?_start=${(filterObj.current_page - 1) * 12}&_limit=12`) + // pre defined that limit of response is 8 & page number count 1
     (filterObj.brand !== 'all' ? `&brandName=${filterObj.brand}` : "") +
     (filterObj.category !== 'all' ? `&category=${filterObj.category}` : "") +
     (filterObj.gender !== 'all' ? `&gender=${filterObj.gender}` : ``) +
@@ -59,7 +59,9 @@ export const shopLoader = async ({ request }) => {
     let data = response.data;
 
     // sorting in descending order
-    if (filterObj.order && !(filterObj.order === "asc" || filterObj.order === "price low")) data.sort((a, b) => b.price.current.value - a.price.current.value)
+    if (filterObj.order && !(filterObj.order === "asc" || filterObj.order === "price low")) {
+      data.sort((a, b) => b.price.current.value - a.price.current.value);
+    }
     return { productsData: data, productsLength: data.length, page: filterObj.current_page };
   } catch (error) {
     console.log(error.response);
