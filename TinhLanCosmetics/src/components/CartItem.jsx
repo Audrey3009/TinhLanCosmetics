@@ -25,17 +25,17 @@ const CartItem = ({ cartItem }) => {
         <h3 className="capitalize font-medium text-accent-content">{title}</h3>
         {/* COMPANY */}
         <h4 className="mt-2 capitalize text-sm text-accent-content">
-          Brand: { brandName }
+          Thương hiệu: { brandName }
         </h4>
         <h4 className="mt-2 capitalize text-sm text-accent-content">
-          Size: { selectedSize }
+          Loại: { selectedSize }
         </h4>
       </div>
       <div className="sm:ml-12">
         {/* AMOUNT */}
         <div className="form-control max-w-xs">
           <label htmlFor="amount" className="label p-0">
-            <span className="label-text text-accent-content">Amount</span>
+            <span className="label-text text-accent-content">Số lượng</span>
           </label>
           <input
             name="number"
@@ -50,12 +50,12 @@ const CartItem = ({ cartItem }) => {
           className="mt-2 link link-warning link-hover text-sm text-accent-content"
           onClick={()=> dispatch(removeItem(id))}
         >
-          remove
+          Xóa
         </button>
       </div>
 
       {/* PRICE */}
-      <p className="font-medium sm:ml-auto text-accent-content">${ (price * amount).toFixed(2) }</p>
+      <p className="font-medium sm:ml-auto text-accent-content">{ (price * amount).toFixed(2) }đ</p>
     </article>
   );
 };

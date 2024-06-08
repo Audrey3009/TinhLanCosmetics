@@ -12,7 +12,7 @@ const Cart = () => {
 
   const isCartEmpty = () => {
     if(cartItems.length === 0){
-      toast.error("Your cart is empty");
+      toast.error("Giỏ hàng trống");
     }else{
       navigate("/thank-you");
     }
@@ -29,11 +29,11 @@ const Cart = () => {
           <CartTotals />
           {loginState ? (
             <button onClick={isCartEmpty} className='btn bg-blue-600 hover:bg-blue-500 text-white btn-block mt-8'>
-              order now
+              Mua ngay
             </button>
           ) : (
             <Link to='/login' className='btn bg-blue-600 hover:bg-blue-500 btn-block text-white mt-8'>
-              please login
+              Vui lòng đăng nhập
             </Link>
           )}
         </div>

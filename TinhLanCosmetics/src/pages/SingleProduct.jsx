@@ -166,9 +166,9 @@ const SingleProduct = () => {
           </h2>
           <SingleProductRating rating={rating} productData={productData} />
           <div>
-            <p className="text-2xl text-error">{productData?.price?.current?.value}đ</p>
+            <p className="text-2xl text-error">${productData?.price?.current?.value}</p>
             {productData?.originalPrice && (
-              <p className="text-sm line-through text-gray-500">{productData?.originalPrice?.current?.value}đ</p>
+              <p className="text-sm line-through text-gray-500">${productData?.originalPrice?.current?.value}</p>
             )}
           </div>
 
@@ -203,13 +203,13 @@ const SingleProduct = () => {
                   dispatch(addToCart(product));
                 } else {
                   toast.error(
-                    "You must be logged in to add products to the cart"
+                    "Bạn cần đăng nhập"
                   );
                 }
               }}
             >
               <FaCartShopping className="text-base mr-1" />
-              Add to cart
+              Thêm vào giỏ hàng
             </button>
 
             {product?.isInWishList ? (
@@ -226,7 +226,7 @@ const SingleProduct = () => {
                 }}
               >
                 <FaHeart className="text-base mr-1" />
-                Remove from wishlist
+                Xóa khỏi yêu thích
               </button>
             ) : (
               <button
@@ -242,13 +242,13 @@ const SingleProduct = () => {
                 }}
               >
                 <FaHeart className="text-base mr-1" />
-                Add to wishlist
+                Thêm vào yêu thích
               </button>
             )}
           </div>
           <div className="other-product-info flex flex-col gap-x-2">
             <div className="badge bg-gray-700 badge-lg font-bold text-white p-5 mt-2">
-              Brand: {productData?.brandName}
+              Thương hiệu: {productData?.brandName}
             </div>
             
             <div
@@ -258,13 +258,13 @@ const SingleProduct = () => {
                   : "badge bg-gray-700 badge-lg font-bold text-white p-5 mt-2"
               }
             >
-              In Stock: {productData?.isInStock ? "Yes" : "No"}
+              Còn hàng?: {productData?.isInStock ? "Yes" : "No"}
             </div>
             <div className="badge bg-gray-700 badge-lg font-bold text-white p-5 mt-2">
               SKU: {productData?.productCode}
             </div>
             <div className="badge bg-gray-700 badge-lg font-bold text-white p-5 mt-2">
-              Category: {productData?.category}
+              Loại: {productData?.category}
             </div>
             
           </div>

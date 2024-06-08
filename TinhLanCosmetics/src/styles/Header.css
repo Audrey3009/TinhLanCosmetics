@@ -107,3 +107,57 @@
         flex-direction: column;
     }
 }
+
+.menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  display: none;
+  flex-direction: column;
+  background-color: white; /* Thay đổi màu nền nếu cần */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border: 1px solid #ccc; /* Border rộng */
+  width: 100px; /* Độ rộng của menu */
+  z-index: 1000;
+}
+
+.menu-dm.open {
+  display: flex;
+}
+
+.menu-dm li {
+  width: 100%;
+  border-bottom: 1px solid #ccc; /* Border giữa các mục */
+}
+
+.menu-dm li:last-child {
+  border-bottom: none; /* Loại bỏ border cho mục cuối cùng */
+}
+
+.menu-dm li a {
+  display: block;
+  padding: 10px 15px; /* Khoảng cách bên trong */
+  color: #333; /* Màu chữ */
+  text-decoration: none; /* Loại bỏ gạch chân */
+}
+
+.menu-dm li a:hover {
+  background-color: #f0f0f0; /* Màu nền khi hover */
+}
+
+.menu-item {
+  position: relative;
+}
+
+.menu-item button {
+  background: none;
+  border: none;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+  padding: 0;
+}
+
+.icon {
+  margin-right: 8px;
+}

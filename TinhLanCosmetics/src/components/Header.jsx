@@ -101,15 +101,15 @@ const Header = () => {
                   <img src="https://xsgames.co/randomusers/avatar.php?g=male" alt="User Avatar" />
                 </div>
               </label>
-              <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+              <ul tabIndex={0} className="menu menu-sm dropdown-content mt-1 z-[1] p-2 shadow bg-base-100 rounded-box w-40">
                 <li>
-                  <Link to="/user-profile" className="justify-between text-accent-content">Profile</Link>
+                  <Link to="/user-profile" className="justify-between text-accent-content">Tài khoản</Link>
                 </li>
                 <li>
-                  <Link to="/order-history" className="text-accent-content">Order history</Link>
+                  <Link to="/order-history" className="text-accent-content">Lịch sử mua hàng</Link>
                 </li>
                 <li>
-                  <Link to="/login" className="text-accent-content">Logout</Link>
+                  <Link to="/login" className="text-accent-content">Đăng xuất</Link>
                 </li>
               </ul>
             </div>
@@ -137,23 +137,23 @@ const Header = () => {
               <li className="text-sm">
                 <NavLink className="text-accent-content" to="/shop">Sản phẩm</NavLink>
               </li>
-              <li className="text-sm">
+              {/* <li className="text-sm">
                 <NavLink className="text-accent-content" to="/about-us">Tra cứu đơn hàng</NavLink>
-              </li>
-              <li className="text-sm">
+              </li> */}
+              {/* <li className="text-sm">
                 <NavLink className="text-accent-content" to="/contact">
                 <FaStore/>
                 Hệ thống cửa hàng</NavLink>
-              </li>
+              </li> */}
               <li className="text-sm">
                 <NavLink className="text-accent-content menu-item" to="/products">
                   <FaBars />
                   Danh mục
                 </NavLink>
                 <ul className="menu p-2">
-                  <li><NavLink to="/category1">Category 1</NavLink></li>
-                  <li><NavLink to="/category2">Category 2</NavLink></li>
-                  <li><NavLink to="/category3">Category 3</NavLink></li>
+                  <li><NavLink to="/category1">Chăm sóc da mặt</NavLink></li>
+                  <li><NavLink to="/category2">Trang điểm</NavLink></li>
+                  <li><NavLink to="/category3">Thực phẩm chức năng</NavLink></li>
                 </ul>
               </li>
             </ul>
@@ -164,20 +164,20 @@ const Header = () => {
         <div className="menu-item text-accent-content flex items-center relative">
           <button onClick={toggleSubMenu} className="flex items-center">
             <FaBars className="icon mr-2" />
-            Danh mục sản phẩm
+              Danh mục sản phẩm
           </button>
-          <ul className={`menu p-2 ${isSubMenuOpen ? 'open' : ''}`}>
-            <li><NavLink to="/category1">Category 1</NavLink></li>
-            <li><NavLink to="/category2">Category 2</NavLink></li>
-            <li><NavLink to="/category3">Category 3</NavLink></li>
+          <ul className={`menu-dm  p-2 ${isSubMenuOpen ? "open" : ""}`}>
+            <li><NavLink to="/category1">Chăm sóc da mặt</NavLink></li>
+            <li><NavLink to="/category2">Trang điểm</NavLink></li>
+            <li><NavLink to="/category3">Thực phẩm chức năng</NavLink></li>
           </ul>
         </div>
           <NavLink className="text-accent-content" to="/">Home</NavLink>
           <NavLink className="text-accent-content" to="/shop">Sản phẩm</NavLink>
-          <NavLink className="text-accent-content flex items-center" to="/about-us">
-          <TbTruckDelivery/>Tra cứu đơn hàng</NavLink>
-          <NavLink className="text-accent-content flex items-center" to="/contact">
-          <FaStore className="icon mr-2"/> Hệ thống cửa hàng</NavLink>
+          {/* <NavLink className="text-accent-content flex items-center" to="/about-us">
+          <TbTruckDelivery/>Tra cứu đơn hàng</NavLink> */}
+          {/* <NavLink className="text-accent-content flex items-center" to="/contact">
+          <FaStore className="icon mr-2"/> Hệ thống cửa hàng</NavLink> */}
         </div>
       </div>
     </>
