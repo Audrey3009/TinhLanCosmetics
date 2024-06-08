@@ -29,7 +29,7 @@ const WishItem = ({ item, counter }) => {
   
       // Dispatch the addToWishlist action with the product data
       store.dispatch(removeFromWishlist({ userObj }));
-      toast.success("Product removed from the wishlist!");
+      toast.success("Sản phẩm đã được xóa khỏi danh sách yêu thích");
   
     }
   return (
@@ -40,7 +40,7 @@ const WishItem = ({ item, counter }) => {
       <td>
         <button className="btn btn-xs btn-error text-sm" onClick={() => removeFromWishlistHandler(item)}>
           <FaHeartCrack />
-          remove from the wishlist
+          Xóa khỏi danh sách yêu thích
         </button>
       </td>
     </tr>

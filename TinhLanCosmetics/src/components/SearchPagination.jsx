@@ -27,7 +27,7 @@ const SearchPagination = ({
           >
             <FaCircleArrowLeft />
           </button>
-          <button className="join-item btn text-base">Page {currentPage}</button>
+          <button className="join-item btn text-base">Trang {currentPage}</button>
           <button
             className="join-item btn text-2xl flex justify-center"
             onClick={() => {

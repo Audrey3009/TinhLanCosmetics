@@ -20,7 +20,7 @@ const cartSlice = createSlice({
             const itemId = action.payload;
             state.cartItems = state.cartItems.filter((item) => item.id !== itemId)
             cartSlice.caseReducers.calculateTotals(state);
-            toast.error('Product removed from the cart!');
+            toast.error('Sản phẩm đã được xóa khỏi giỏ hàng!');
         },
         updateCartAmount: (state, action) => {
             const cartItem = state.cartItems.find(item => item.id === action.payload.id);
@@ -45,7 +45,7 @@ const cartSlice = createSlice({
                 cartItem.amount += action.payload.amount;
             }
             cartSlice.caseReducers.calculateTotals(state);
-            toast.success('Product added to the cart!');
+            toast.success('Sản phẩm đã được thêm vào giỏ hàng!');
 
         }
     }

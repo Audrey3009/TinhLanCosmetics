@@ -9,42 +9,36 @@ import FormCheckbox from "./FormCheckbox";
 const Filters = () => {
   const [selectCategoryList, setSelectCategoryList] = useState([
     "all",
-    "shoes",
-    "slippers",
-    "heels",
-    "t-shirts",
-    "jackets",
-    "caps",
-    "shorts",
-    "sweaters",
-    "sneakers",
-    "shirts",
-    "boots",
-    "overshirts",
-    "pants",
-    "jeans",
-    "socks",
-    "belts",
-    "trainers",
+    "Son",
+    "Sữa rửa mặt",
+    "Kem Dường",
+    "Kem nền",
+    "Nước tẩy trang",
+    "Phấn",
+    "Mặt nạ",
+    "Dưỡng tóc",
+    "Thực phẩm chức năng",
+    "Dụng cụ trang điểm",
+    "Chì kẻ mày",
   ]);
   const [selectBrandList, setSelectBrandList] = useState([
     "all",
-    "WALK LONDON",
-    "Reebok",
-    "Nike",
-    "Jack & Jones",
-    "Crocs",
-    "Vans",
-    "Puma",
-    "New Balance",
-    "Tommy Jeans",
-    "Tommy Hilfiger",
-    "Bershka",
-    "New Look",
-    "AllSaints",
-    "Columbia",
-    "The North Face",
-    "Collusion",
+    "Habaria",
+    "SVR",
+    "Bioderma",
+    "Wonjin",
+    "Dearmay",
+    "Loreal",
+    "Black Rouge",
+    "Catrice",
+    "Arkopharma",
+    "La Roche-Posay",
+    "Cerave",
+    "Espoir",
+    "Lilybyred",
+    "Romand",
+    "Pretty Skin",
+    "Vichy",
     "ASOS DESIGN",
     "Topman",
     "Dr Denim",
@@ -67,13 +61,13 @@ const Filters = () => {
   return (
     <Form className="bg-base-200 rounded-md px-8 py-4 grid gap-x-4  gap-y-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 items-center">
       {/* SEARCH */}
-      <FormInput
+      {/* <FormInput
         type="search"
         label="search product"
         name="search"
         size="input-sm"
         defaultValue=""
-      />
+      /> */}
       {/* CATEGORIES */}
       <FormSelect
         label="select category"

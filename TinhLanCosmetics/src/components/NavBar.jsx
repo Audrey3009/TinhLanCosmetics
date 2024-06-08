@@ -9,19 +9,13 @@ const NavBar = () => {
         <li className="py-2"><a href="#" className="block text-gray-800">SẢN PHẨM MỚI</a></li>
         <li className="py-2"><a href="#" className="block text-gray-800">SẢN PHẨM ƯU ĐÃI</a></li>
         <li className="py-2"><a href="#" className="block text-green-600 font-bold">FLASH SALE</a></li>
-        <li className="py-2"><a href="#" className="block text-orange-600 font-bold">ĐỘC QUYỀN ONLINE</a></li>
         <li className="py-2 relative group">
           <a href="#" className="block text-gray-800">DƯỠNG DA</a>
           <ul className="absolute left-full top-0 hidden group-hover:block bg-white shadow-lg list-none p-0 w-48">
             {/* Thêm các mục con nếu có */}
           </ul>
         </li>
-        <li className="py-2 relative group">
-          <a href="#" className="block text-gray-800">NGUYÊN LIỆU</a>
-          <ul className="absolute left-full top-0 hidden group-hover:block bg-white shadow-lg list-none p-0 w-48">
-            {/* Thêm các mục con nếu có */}
-          </ul>
-        </li>
+        
         <li className="py-2 relative group">
           <a href="#" className="block text-gray-800">TRANG ĐIỂM</a>
           <ul className="absolute left-full top-0 hidden group-hover:block bg-white shadow-lg list-none p-0 w-48">
@@ -34,13 +28,7 @@ const NavBar = () => {
             {/* Thêm các mục con nếu có */}
           </ul>
         </li>
-        <li className="py-2 relative group">
-          <a href="#" className="block text-gray-800">DÀNH CHO NAM</a>
-          <ul className="absolute left-full top-0 hidden group-hover:block bg-white shadow-lg list-none p-0 w-48">
-            {/* Thêm các mục con nếu có */}
-          </ul>
-        </li>
-        <li className="py-2"><a href="#" className="block text-gray-800">Ưu đãi đặc biệt</a></li>
+        
       </ul>
     </nav>
     );

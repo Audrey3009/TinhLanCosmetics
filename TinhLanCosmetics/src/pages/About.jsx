@@ -1,24 +1,43 @@
-import React from "react";
-import { SectionTitle } from "../components";
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
+import axios from "axios";
 
-const About = () => {
+const OrderLookupPage = () => {
+  const [orderId, setOrderId] = useState("");
+  const [orderInfo, setOrderInfo] = useState(null);
+  const [error, setError] = useState(null);
+
+  const handleOrderLookup = async () => {
+    try {
+      const response = await axios.get(`http://localhost:8080/orders/${orderId}`);
+      setOrderInfo(response.data);
+      setError(null);
+    } catch (error) {
+      setOrderInfo(null);
+      setError("Không tìm thấy đơn hàng với mã này.");
+    }
+  };
+
   return (
-    <div>
-      <SectionTitle title="About Us" path="Home | About" />
-      <div className="about-content text-center max-w-2xl mx-auto mt-5">
-      <h2 className="text-6xl text-center mb-10 max-sm:text-3xl text-accent-content">We love our customers!</h2>
-      <p className="text-lg text-center max-sm:text-sm max-sm:px-2 text-accent-content">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus
-        obcaecati eum est commodi, quam, ut quidem deleniti quos quod temporibus
-        dicta deserunt voluptates ab! Deleniti id repellat, labore fugiat
-        obcaecati dolorem minima fugit quasi nam velit reiciendis delectus ea
-        tempora.
-      </p>
-      <Link to="/contact" className="btn btn-wide bg-blue-600 hover:bg-blue-500 text-white mt-5">Contact Us</Link>
-      </div>
+    <div className="order-lookup-page">
+      <h1>Tra cứu đơn hàng</h1>
+      <input
+        type="text"
+        placeholder="Nhập mã đơn hàng"
+        value={orderId}
+        onChange={(e) => setOrderId(e.target.value)}
+      />
+      <button onClick={handleOrderLookup}>Tra cứu</button>
+      {error && <p className="error-message">{error}</p>}
+      {orderInfo && (
+        <div className="order-info">
+          <h2>Thông tin đơn hàng</h2>
+          <p>Mã đơn hàng: {orderInfo.id}</p>
+          <p>Tổng tiền: {orderInfo.total}</p>
+          {/* Hiển thị các thông tin khác về đơn hàng */}
+        </div>
+      )}
     </div>
   );
 };
 
-export default About;
+export default OrderLookupPage;

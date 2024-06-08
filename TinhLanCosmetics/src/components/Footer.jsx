@@ -95,6 +95,9 @@ const Footer = () => {
         <div>
           <h2 className="text-xl font-semibold text-gray-800">THÔNG TIN</h2>
           {/* Thêm thông tin hỗ trợ khách hàng tại đây */}
+          <p className="text-gray-600">Tuyển dụng</p>
+          <p className="text-gray-600">Tin tức mới</p>
+
         </div>  
           
       </div>

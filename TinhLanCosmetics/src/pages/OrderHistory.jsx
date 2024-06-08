@@ -36,7 +36,7 @@ const OrderHistory = () => {
 
   return (
     <>
-      <SectionTitle title="Order History" path="Home | Order History" />
+      <SectionTitle title="Lịch sử mua hàng"  />
       <div className="order-history-main max-w-7xl mx-auto mt-10 px-20 max-md:px-10">
         {orders?.length === 0 ? (
           <div className="text-center">

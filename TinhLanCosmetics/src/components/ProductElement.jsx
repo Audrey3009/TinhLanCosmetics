@@ -47,8 +47,8 @@ const ProductElement = ({ id, title, image, rating, price, originalPrice, brandN
             </h3>
           </Link>
           <div className="flex flex-col items-start mt-auto">
-            <span className="text-base font-bold text-accent-content m-0" style={{ color: "#d62828" }}>{price}đ</span>
-            <span className="text-sm text-gray-500 line-through mt-1 m-0">{originalPrice}đ</span>
+            <span className="text-base font-bold text-accent-content m-0" style={{ color: "#d62828" }}>${price}</span>
+            <span className="text-sm text-gray-500 line-through mt-1 m-0">${originalPrice}</span>
 
             <div className="flex items-center justify-between w-full mt-2">
               <div className="flex items-center">
