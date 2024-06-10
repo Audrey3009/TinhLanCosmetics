@@ -258,11 +258,11 @@ const SingleProduct = () => {
                   : "badge bg-gray-700 badge-lg font-bold text-white p-5 mt-2"
               }
             >
-              Còn hàng?: {productData?.isInStock ? "Yes" : "No"}
+              Còn hàng?: {productData?.isInStock ? "Còn" : "Không"}
             </div>
-            <div className="badge bg-gray-700 badge-lg font-bold text-white p-5 mt-2">
+            {/* <div className="badge bg-gray-700 badge-lg font-bold text-white p-5 mt-2">
               SKU: {productData?.productCode}
-            </div>
+            </div> */}
             <div className="badge bg-gray-700 badge-lg font-bold text-white p-5 mt-2">
               Loại: {productData?.category}
             </div>
