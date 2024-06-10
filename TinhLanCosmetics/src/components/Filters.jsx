@@ -39,23 +39,7 @@ const Filters = () => {
     "Romand",
     "Pretty Skin",
     "Vichy",
-    "ASOS DESIGN",
-    "Topman",
-    "Dr Denim",
-    "Polo Ralph Lauren",
-    "ASOS Dark Future",
-    "Levi's",
-    "Threadbare",
-    "Calvin Klein",
-    "AAPE BY A BATHING APE®",
-    "Good For Nothing",
-    "Timberland",
-    "Pull and Bear",
-    "Koi Footwear",
-    "adidas performance",
-    "Nike Running",
-    "Dr Martens",
-    "River Island",
+    
   ]);
 
   return (
@@ -70,7 +54,7 @@ const Filters = () => {
       /> */}
       {/* CATEGORIES */}
       <FormSelect
-        label="select category"
+        label="Loại"
         name="category"
         list={selectCategoryList}
         size="select-sm"
@@ -78,7 +62,7 @@ const Filters = () => {
       />
       {/* COMPANIES */}
       <FormSelect
-        label="select brand"
+        label="Thương hiệu"
         name="brand"
         list={selectBrandList}
         size="select-sm"
@@ -86,9 +70,9 @@ const Filters = () => {
       />
       {/* ORDER */}
       <FormSelect
-        label="sort by"
+        label="Lọc"
         name="order"
-        list={["asc", "desc", "price high", "price low"]}
+        list={["Giá cao đến thấp", "Giá thấp đến cao"]}
         size="select-sm"
         defaultValue="a-z"
       />
@@ -103,7 +87,7 @@ const Filters = () => {
       {/* PRICE */}
       <FormRange
         name="price"
-        label="select price"
+        label="Giá"
         size="range-sm"
         price={2000}
       />
@@ -112,7 +96,7 @@ const Filters = () => {
 
       {/* In stock */}
       <FormCheckbox
-        label="Only products in stock"
+        label="Sản phẩm còn hàng"
         name="stock"
         defaultValue="false"
       />

@@ -84,11 +84,11 @@ const Header = () => {
             </label>
             <div tabIndex={0} className="mt-3 z-[1] card card-compact dropdown-content w-52 bg-base-100 shadow">
               <div className="card-body">
-                <span className="font-bold text-lg text-accent-content">{amount} Items</span>
-                <span className="text-info text-accent-content">Subtotal: ${total.toFixed(2)}</span>
+                <span className="font-bold text-lg text-accent-content">{amount} Sản phẩm</span>
+                <span className="text-info text-accent-content">Tổng tiền: ${total.toFixed(2)}</span>
                 <div className="card-actions">
                   <Link to="/cart" className="btn bg-blue-600 btn-block text-white hover:bg-blue-500 text-base-content">
-                    View cart
+                    Xem giỏ hàng
                   </Link>
                 </div>
               </div>
@@ -161,7 +161,7 @@ const Header = () => {
         </div>
 
         <div className="container text-sm navlinks-container">
-        <div className="menu-item text-accent-content flex items-center relative">
+        {/* <div className="menu-item text-accent-content flex items-center relative">
           <button onClick={toggleSubMenu} className="flex items-center">
             <FaBars className="icon mr-2" />
               Danh mục sản phẩm
@@ -171,7 +171,7 @@ const Header = () => {
             <li><NavLink to="/category2">Trang điểm</NavLink></li>
             <li><NavLink to="/category3">Thực phẩm chức năng</NavLink></li>
           </ul>
-        </div>
+        </div> */}
           <NavLink className="text-accent-content" to="/">Home</NavLink>
           <NavLink className="text-accent-content" to="/shop">Sản phẩm</NavLink>
           {/* <NavLink className="text-accent-content flex items-center" to="/about-us">
