@@ -20,6 +20,7 @@ import { singleProductLoader } from "./pages/SingleProduct";
 import { shopLoader } from "./pages/Shop";
 import { ToastContainer } from "react-toastify";
 import BackToTopButton from './components/BackToTopButton';
+import KommunicateChat from "./chatbot";
 // import { useEffect } from "react";
 
 
@@ -86,8 +87,10 @@ const router = createBrowserRouter ([{
             path: "order-history",
             element: <OrderHistory/>
         },
+
     ],
 }, ]);
+
 
 function App() {
 
@@ -97,6 +100,7 @@ function App() {
     <>
         <RouterProvider router = { router }/> 
         <ToastContainer position = "top-center"/>
+        <KommunicateChat/>
         <BackToTopButton/>
         </>
 
