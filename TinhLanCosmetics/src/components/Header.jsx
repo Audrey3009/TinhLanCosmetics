@@ -6,7 +6,10 @@ import { TbTruckDelivery } from "react-icons/tb";
 import "../styles/Header.css";
 import { useDispatch, useSelector } from "react-redux";
 import axios from "axios";
-import { clearWishlist, updateWishlist } from "../features/wishlist/wishlistSlice";
+import {
+  clearWishlist,
+  updateWishlist,
+} from "../features/wishlist/wishlistSlice";
 
 const Header = () => {
   const { amount, total } = useSelector((state) => state.cart);
@@ -15,11 +18,12 @@ const Header = () => {
   const dispatch = useDispatch();
   const [isSubMenuOpen, setIsSubMenuOpen] = useState(false);
 
-
   const fetchWishlist = async () => {
     if (loginState) {
       try {
-        const getResponse = await axios.get(`http://localhost:8080/user/${localStorage.getItem("id")}`);
+        const getResponse = await axios.get(
+          `http://localhost:8080/user/${localStorage.getItem("id")}`
+        );
         const userObj = getResponse.data;
         dispatch(updateWishlist({ userObj }));
       } catch (error) {
@@ -61,33 +65,74 @@ const Header = () => {
       </div>
       <div className="navbar">
         <div className="flex-1">
-          <Link to="/" className="btn btn-ghost normal-case text-2xl font-black text-accent-content">
+          <Link
+            to="/"
+            className="btn btn-ghost normal-case text-2xl font-black text-accent-content"
+          >
             <img src="../public/logo-big.svg" alt="Logo" />
           </Link>
         </div>
         <div className="flex-none">
-          <Link to="/search" className="btn btn-ghost btn-circle text-accent-content">
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+          <Link
+            to="/search"
+            className="btn btn-ghost btn-circle text-accent-content"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-5 w-5"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+              />
             </svg>
           </Link>
-          <Link to="/wishlist" className="btn btn-ghost btn-circle text-accent-content">
+          <Link
+            to="/wishlist"
+            className="btn btn-ghost btn-circle text-accent-content"
+          >
             <FaHeart className="text-xl" />
           </Link>
           <div className="dropdown dropdown-end">
             <label tabIndex={0} className="btn btn-ghost btn-circle">
               <div className="indicator">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-5 w-5"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
+                  />
                 </svg>
               </div>
             </label>
-            <div tabIndex={0} className="mt-3 z-[1] card card-compact dropdown-content w-52 bg-base-100 shadow">
+            <div
+              tabIndex={0}
+              className="mt-3 z-[1] card card-compact dropdown-content w-52 bg-base-100 shadow"
+            >
               <div className="card-body">
-                <span className="font-bold text-lg text-accent-content">{amount} Sản phẩm</span>
-                <span className="text-info text-accent-content">Tổng tiền: ${total.toFixed(2)}</span>
+                <span className="font-bold text-lg text-accent-content">
+                  {amount} Sản phẩm
+                </span>
+                <span className="text-info text-accent-content">
+                  Tổng tiền: ${total.toFixed(2)}
+                </span>
                 <div className="card-actions">
-                  <Link to="/cart" className="btn bg-blue-600 btn-block text-white hover:bg-blue-500 text-base-content">
+                  <Link
+                    to="/cart"
+                    className="btn bg-blue-600 btn-block text-white hover:bg-blue-500 text-base-content"
+                  >
                     Xem giỏ hàng
                   </Link>
                 </div>
@@ -98,18 +143,33 @@ const Header = () => {
             <div className="dropdown dropdown-end">
               <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
                 <div className="w-10 rounded-full">
-                  <img src="https://xsgames.co/randomusers/avatar.php?g=male" alt="User Avatar" />
+                  <img
+                    src="https://xsgames.co/randomusers/avatar.php?g=male"
+                    alt="User Avatar"
+                  />
                 </div>
               </label>
-              <ul tabIndex={0} className="menu menu-sm dropdown-content mt-1 z-[1] p-2 shadow bg-base-100 rounded-box w-40">
+              <ul
+                tabIndex={0}
+                className="menu menu-sm dropdown-content mt-1 z-[1] p-2 shadow bg-base-100 rounded-box w-40"
+              >
                 <li>
-                  <Link to="/user-profile" className="justify-between text-accent-content">Tài khoản</Link>
+                  <Link
+                    to="/user-profile"
+                    className="justify-between text-accent-content"
+                  >
+                    Tài khoản
+                  </Link>
                 </li>
                 <li>
-                  <Link to="/order-history" className="text-accent-content">Lịch sử mua hàng</Link>
+                  <Link to="/order-history" className="text-accent-content">
+                    Lịch sử mua hàng
+                  </Link>
                 </li>
                 <li>
-                  <Link to="/login" className="text-accent-content">Đăng xuất</Link>
+                  <Link to="/login" className="text-accent-content">
+                    Đăng xuất
+                  </Link>
                 </li>
               </ul>
             </div>
@@ -126,16 +186,24 @@ const Header = () => {
             </label>
           </div>
           <div className="drawer-side z-10">
-            <label htmlFor="my-drawer" aria-label="close sidebar" className="drawer-overlay"></label>
+            <label
+              htmlFor="my-drawer"
+              aria-label="close sidebar"
+              className="drawer-overlay"
+            ></label>
             <ul className="menu p-4 w-80 min-h-full bg-base-200 text-base-content mt-4">
               <label htmlFor="my-drawer" className="btn drawer-button">
                 <FaWindowClose className="text-2xl ml-auto" />
               </label>
               <li className="text-sm">
-                <NavLink className="text-accent-content" to="/">Home</NavLink>
+                <NavLink className="text-accent-content" to="/">
+                  Home
+                </NavLink>
               </li>
               <li className="text-sm">
-                <NavLink className="text-accent-content" to="/shop">Sản phẩm</NavLink>
+                <NavLink className="text-accent-content" to="/shop">
+                  Sản phẩm
+                </NavLink>
               </li>
               {/* <li className="text-sm">
                 <NavLink className="text-accent-content" to="/about-us">Tra cứu đơn hàng</NavLink>
@@ -145,7 +213,7 @@ const Header = () => {
                 <FaStore/>
                 Hệ thống cửa hàng</NavLink>
               </li> */}
-              <li className="text-sm">
+              {/* <li className="text-sm">
                 <NavLink className="text-accent-content menu-item" to="/products">
                   <FaBars />
                   Danh mục
@@ -155,13 +223,13 @@ const Header = () => {
                   <li><NavLink to="/category2">Trang điểm</NavLink></li>
                   <li><NavLink to="/category3">Thực phẩm chức năng</NavLink></li>
                 </ul>
-              </li>
+              </li> */}
             </ul>
           </div>
         </div>
 
         <div className="container text-sm navlinks-container">
-        {/* <div className="menu-item text-accent-content flex items-center relative">
+          {/* <div className="menu-item text-accent-content flex items-center relative">
           <button onClick={toggleSubMenu} className="flex items-center">
             <FaBars className="icon mr-2" />
               Danh mục sản phẩm
@@ -172,8 +240,12 @@ const Header = () => {
             <li><NavLink to="/category3">Thực phẩm chức năng</NavLink></li>
           </ul>
         </div> */}
-          <NavLink className="text-accent-content" to="/">Home</NavLink>
-          <NavLink className="text-accent-content" to="/shop">Sản phẩm</NavLink>
+          <NavLink className="text-accent-content" to="/">
+            Home
+          </NavLink>
+          <NavLink className="text-accent-content" to="/shop">
+            Sản phẩm
+          </NavLink>
           {/* <NavLink className="text-accent-content flex items-center" to="/about-us">
           <TbTruckDelivery/>Tra cứu đơn hàng</NavLink> */}
           {/* <NavLink className="text-accent-content flex items-center" to="/contact">

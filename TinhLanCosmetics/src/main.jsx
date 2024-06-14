@@ -5,10 +5,12 @@ import "./index.css";
 import { store } from "./store";
 import { Provider } from "react-redux";
 import "react-toastify/dist/ReactToastify.css";
+import Modal from "react-modal";
 
+Modal.setAppElement("#root");
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-    <Provider store={store}>
-      <App />
-    </Provider>
+  <Provider store={store}>
+    <App />
+  </Provider>
 );

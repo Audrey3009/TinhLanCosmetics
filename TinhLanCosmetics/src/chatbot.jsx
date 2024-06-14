@@ -1,29 +1,26 @@
-import React, {Component} from "react";
+// src/Chatbox.js
+import React, { useEffect } from "react";
 
-class KommunicateChat extends Component{
-    constructor(props) {
-        super(props);
-    }
-    componentDidMount(){
-        (function(d, m){
-        var kommunicateSettings = {
-            "appId":"390ce12aac61290cb5b6cb354bd1d4cdb",
-            "popupWidget":true,
-            "automaticChatOpenOnNavigation":true
-        };
-        var s = document.createElement("script"); 
-        s.type = "text/javascript"; 
-        s.async = true;
-        s.src = "https://widget.kommunicate.io/v2/kommunicate.app";
-        var h = document.getElementsByTagName("head")[0]; h.appendChild(s);
-        window.kommunicate = m; m._globals = kommunicateSettings;
-      })(document, window.kommunicate || {});
-    }
-    render(){
-        return (
-            <div></div>
-        )
-    }
-}
+const Chatbox = () => {
+  useEffect(() => {
+    const script = document.createElement("script");
+    script.src =
+      "https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1";
+    script.async = true;
+    document.body.appendChild(script);
 
-export default KommunicateChat
+    return () => {
+      document.body.removeChild(script);
+    };
+  }, []);
+
+  return (
+    <df-messenger
+      chat-title="Tinh Lan Cosmetics Bot"
+      agent-id="631971ba-f864-4421-940d-e1954728508e"
+      language-code="vi"
+    ></df-messenger>
+  );
+};
+
+export default Chatbox;
