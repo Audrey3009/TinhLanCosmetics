@@ -41,12 +41,10 @@ const ThankYou = () => {
     }
   }, []);
 
-
   return (
     <>
-      <SectionTitle title="Thank You" />
       <div className="thankyou-content text-center text-accent-content px-10 max-w-7xl mx-auto">
-        <h2 className="text-4xl max-sm:text-4xl">
+        <h2 className="text-4xl max-sm:text-4xl pt-5">
           Cám ơn bạn đã mua hàng
         </h2>
 
@@ -64,7 +62,6 @@ const ThankYou = () => {
           <li className="hover:text-blue-600 cursor-pointer">
             <Link to="/shop">&rarr; Xem thêm các sản phẩm khác &larr;</Link>
           </li>
-          
         </ul>
 
         {/* <h4 className="text-xl mt-5 max-sm:text-lg">

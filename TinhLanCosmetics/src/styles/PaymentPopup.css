@@ -1,0 +1,34 @@
+/* CSS cho modal và overlay */
+.modal-content {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  padding: 20px;
+  border-radius: 4px;
+  outline: none;
+  max-width: 400px; /* Thiết lập chiều rộng tối đa */
+  width: 100%; /* Đảm bảo modal không vượt quá chiều rộng */
+  z-index: 1000;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.75);
+  z-index: 999; /* Đảm bảo overlay nằm dưới modal nhưng trên các thành phần khác */
+}
+
+/* CSS bổ sung để căn giữa nội dung */
+
+.qr-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 20px;
+}

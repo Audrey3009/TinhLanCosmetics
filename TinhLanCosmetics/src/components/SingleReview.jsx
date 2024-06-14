@@ -25,7 +25,7 @@ const SingleReview = ({ reviewObj }) => {
           }
           alt=""
         />
-        <div className="font-medium dark:text-white">
+        <div className="font-medium dark:text-black">
           <p>{reviewObj.username}</p>
         </div>
       </div>
