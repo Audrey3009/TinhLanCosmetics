@@ -6,11 +6,7 @@
       "description": "Demo description",
       "isInStock": true,
       "category": "Son",
-      "availableSizes": [
-        "Màu 1",
-        "Màu 2",
-        "Màu 3"
-      ],
+      "availableSizes": ["Màu 1", "Màu 2", "Màu 3"],
       "rating": 4,
       "reviews": [
         {
@@ -433,11 +429,7 @@
       "description": "Demo description",
       "isInStock": false,
       "category": "Mặt nạ",
-      "availableSizes": [
-        "Màu vàng",
-        "Màu xanh lá",
-        "Màu xanh dương"
-      ],
+      "availableSizes": ["Màu vàng", "Màu xanh lá", "Màu xanh dương"],
       "rating": 4,
       "reviews": [
         {
@@ -677,13 +669,7 @@
       "description": "Demo description",
       "isInStock": true,
       "category": "Son",
-      "availableSizes": [
-        "Màu 1",
-        "Màu 2",
-        "Màu 3",
-        "Màu 4",
-        "Màu 5"
-      ],
+      "availableSizes": ["Màu 1", "Màu 2", "Màu 3", "Màu 4", "Màu 5"],
       "rating": 4,
       "reviews": [
         {
@@ -743,13 +729,7 @@
       "description": "Demo description",
       "isInStock": false,
       "category": "Son",
-      "availableSizes": [
-        "Màu 1",
-        "Màu 2",
-        "Màu 3",
-        "Màu 4",
-        "Màu 5"
-      ],
+      "availableSizes": ["Màu 1", "Màu 2", "Màu 3", "Màu 4", "Màu 5"],
       "rating": 5,
       "reviews": [
         {
@@ -871,13 +851,7 @@
       "description": "Demo description",
       "isInStock": true,
       "category": "Chì kẻ mày",
-      "availableSizes": [
-        "Màu 1",
-        "Màu 2",
-        "Màu 3",
-        "Màu 4",
-        "Màu 5"
-      ],
+      "availableSizes": ["Màu 1", "Màu 2", "Màu 3", "Màu 4", "Màu 5"],
       "rating": 4,
       "reviews": [
         {
@@ -1474,11 +1448,11 @@
   "user": [
     {
       "id": "EDVYu6rC_G9SL9Z7-H9tr",
-      "name": "Aleksandar",
-      "lastname": "Kuzmanovic",
+      "name": "Audrey",
+      "lastname": "Bui",
       "email": "user@gmail.com",
       "phone": "061123231",
-      "adress": "Marka Markovica 252",
+      "adress": "Linh Trung, Thủ Đức",
       "password": "1233214321",
       "userWishlist": [
         {
